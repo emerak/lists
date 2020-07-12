@@ -1,0 +1,32 @@
+<section id="list" data-list="<%= @list.id %>" class="section">
+  <section class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li class="is-active"><%= link_to "Listas", lists_path, 'aria-current': "page" %></li>
+          </ul>
+        </nav>
+        <head>
+          <h1 class="mb-3">
+            <span class="icon is-small">
+              <i class="fas fa-list-ul"></i>
+            </span>
+            <span class="title is-3"><%= @list.name.titleize %></span>
+          </h1>
+        </head>
+        <section id="list_items" class="container mt-6">
+          <%= render 'items/new' %>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section id="list_items" class="container mt-6">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters" id="cards">
+        <%= render partial: 'items/item', collection: @list.items %>
+      </div>
+    </div>
+  </section>
+</section>

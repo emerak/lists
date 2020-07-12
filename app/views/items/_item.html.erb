@@ -1,0 +1,23 @@
+<div class="card mt-2" id="<%= item.id %>">
+  <div class="card-content">
+    <p class="title">
+      <%= item.description %>
+    </p>
+  </div>
+  <footer class="card-footer">
+    <p class="card-footer-item">
+      <span class="icon is-medium">
+        <%= link_to [@list, item], method: :patch do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </span>
+    </p>
+    <p class="card-footer-item">
+      <span class="icon is-medium">
+        <%= link_to [@list, item], method: :delete do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </span>
+    </p>
+  </footer>
+</div>
