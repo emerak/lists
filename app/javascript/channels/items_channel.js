@@ -37,7 +37,7 @@ $(document).ready(function() {
                   <p class="card-footer-item">
                     <span class="icon is-medium">
                       <a href="${url}" data-method="patch">
-                        <i class="fas fa-trash-alt"></i>
+                        <i class="fas fa-edit"></i>
                       </a>
                     </span>
                   </p>

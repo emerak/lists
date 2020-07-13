@@ -23,6 +23,14 @@ class ListsController < ApplicationController
     @item = Item.new
   end
 
+  def destroy
+    @list = List.find(params[:id])
+
+    if @list.destroy
+      ActionCable.server.broadcast "list", operation: :remove, id: @list.id
+    end
+  end
+
   private
 
   def list_params

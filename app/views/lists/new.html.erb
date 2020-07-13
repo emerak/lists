@@ -1,5 +1,18 @@
-<%= form_with(model: @list, remote: true) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create" %>
-<% end %>
-<%= render partial: 'lists'%>
+<section class="section">
+  <section class="container">
+    <div class="columns is-centered">
+      <div class="column is-three-quarters">
+        <%= form_with(model: @list, remote: true) do |f| %>
+          <div class="field">
+            <div class="control">
+              <%= f.label :description, 'Nombre', class: 'label' %>
+              <%= f.text_field :name, class:'input' %>
+            </div>
+          </div>
+          <%= f.submit "Guardar", class:"button is-primary" %>
+        <% end %>
+        <%= render partial: 'lists'%>
+      </div>
+    </div>
+  </section>
+</section>
